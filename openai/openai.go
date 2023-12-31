@@ -18,12 +18,14 @@ func (openai *OpenAI) CallCompletions(completionsAPI string, requestBody Request
 		return err.Error()
 	}
 
+	// 创建请求体
 	req, err := http.NewRequest("POST", completionsAPI, bytes.NewBuffer(data))
 	if err != nil {
 		log.Fatal(err)
 		return err.Error()
 	}
 
+	// 设置请求头
 	req.Header.Set("Content-Type", "application/data")
 	req.Header.Set("Authorization", "Bearer "+openai.Organization)
 
@@ -49,5 +51,6 @@ func (openai *OpenAI) CallCompletions(completionsAPI string, requestBody Request
 		return err.Error()
 	}
 
+	// 返回响应的内容
 	return response.Choices[0].Message.Content
 }
