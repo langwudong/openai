@@ -1,8 +1,8 @@
 
 
-# GO语言搭建多人游戏服务器
+# GO语言简单整合ChatGPT的API
 
-本项目是基于TCP协议开发的**多人游戏服务器**，适用于多人实时游戏等。
+通过对OpenAI官方对外开放的接口的调用，实现简单的整合，目前只整合了聊天的API。后续也可以整合画图等API。
 
 <!-- PROJECT SHIELDS -->
 
@@ -22,7 +22,7 @@
   </a>
 
 
-  <h3 align="center">GO语言搭建多人游戏服务器</h3>
+  <h3 align="center">GO语言简单整合ChatGPT的API</h3>
   <p align="center">
     欢迎测试、学习以及交流
     <br />
@@ -55,7 +55,7 @@
 
 ### 上手指南
 
-你只需要在你的设备上配置**GO语言环境**，然后**克隆该项目**并将项目中的数据库信息替换为你自己的**数据库信息**即可运行。
+在调用接口前，只需要构建OpenAI结构体，然后附带请求地址和请求消息体调用CallCompletion方法即可。OpenAI结构体只需要你的OpenAI的Key。你也可以将请求地址换成中转点的请求地址。
 
 #### 安装
 
@@ -72,15 +72,7 @@ eg:
 ```
 filetree 
 ├─.idea
-├─bin
-├─pkg
-└─src
-    ├─assets
-    ├─data
-    ├─logs
-    ├─main
-    ├─mysql
-    └─network
+└─openai
 
 ```
 
@@ -98,7 +90,7 @@ filetree
 
 ### 使用到的框架
 
-- [gin](https://github.com/gin-gonic/gin)
+暂无
 
 ### 贡献者
 
